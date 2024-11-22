@@ -1,17 +1,65 @@
-# Quiz MCQ Generator
+# Generating Multiple-Choice Questions from Text
 
-This is a Python-based project that generates multiple-choice questions (MCQs) based on given text content. The app utilizes NLP (Natural Language Processing) with SpaCy to process the text and extract key information for generating questions.
+This project demonstrates the process of generating Multiple-Choice Questions (MCQs) from a given text input. The notebook leverages advanced NLP models and preprocessing techniques to automate the creation of MCQs, complete with plausible options for each question.
+
+---
 
 ## Features
-- Generate MCQs from input text.
-- Display the questions along with multiple choices.
-- Built with Python and Flask framework.
+- **Automated Question Generation**: Converts input text into well-formed questions.
+- **Multiple-Choice Options**: Generates meaningful distractors to accompany correct answers.
+- **Comprehensive Preprocessing**: Includes tokenization, stopword removal, part-of-speech tagging, and candidate selection for accurate question generation.
+- **Customizable Workflow**: Adaptable for various use cases and domains.
 
-## Tech Stack
-- **Python**: Programming language used for backend logic.
-- **Flask**: A micro web framework to serve the application.
-- **SpaCy**: NLP library used to process the text and generate questions.
-- **HTML/CSS**: Used for the front-end user interface.
+---
+
+## Models Used
+
+### **T5 Model (Text-To-Text Transfer Transformer)**
+- Utilized for conditional text generation.
+- Fine-tuned to generate questions from context.
+
+### **Sense2Vec Model**
+- An advanced version of Word2Vec.
+- Generates sense-aware word vectors to produce plausible distractors.
+
+---
+
+## Methodology
+
+### **Preprocessing Steps**
+1. **Text Tokenization**:
+   - Splits input text into sentences and words for granular processing.
+2. **Stopword Removal**:
+   - Filters out irrelevant words to focus on significant content.
+3. **Part-of-Speech Tagging**:
+   - Identifies nouns and proper nouns essential for generating meaningful questions and options.
+4. **Candidate Selection**:
+   - Uses the MultipartiteRank algorithm to extract key phrases for question generation.
+
+### **Question and Option Generation**
+- **T5 Model**: Generates questions based on selected key phrases.
+- **Sense2Vec**: Creates distractors for each question to enhance MCQ quality.
+
+---
+
+## Example Usage
+
+The notebook includes a `PythonPredictor` class that:
+- Processes input text.
+- Generates MCQs with options.
+- Returns questions and options as output.
+
+Example workflow:
+1. Instantiate the `PythonPredictor` class.
+2. Provide input text to the predictor.
+3. Retrieve and review the generated MCQs.
+
+---
+
+## Note
+- This project is intended for educational and demonstration purposes.
+- Users are encouraged to customize and adapt the code for specific requirements and use cases.
+
 
 ## Installation
 
