@@ -71,7 +71,7 @@ Follow these steps to get the project up and running:
 
 2. Navigate into the project directory:
 
-   cd QuizMCQ_Generator
+   cd Quizz_Generator
 
 3. Create and activate a virtual environment:
 
